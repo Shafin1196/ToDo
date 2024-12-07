@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+<!--  -->
+{%block title%}Edit{%endblock%}
+<!--  -->
+{% load crispy_forms_tags %} {%block content%}
+<!--  -->
+<form method="post" style="width: 50%; margin: auto;">
+    {%csrf_token%} {{taskForm|crispy }}
+    <button type="submit" class="btn btn-danger" style="margin-left: 40%;">Save</button>
+</form>
+
+{%endblock%}

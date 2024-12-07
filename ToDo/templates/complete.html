@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+<!--  -->
+{%block title%}Complete{%endblock%}
+<!--  -->
+{%block content%}
+<!--  -->
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for task in taskList%} {% if task.is_completed %}
+        <tr>
+            <th scope="row"> {{task.id}} </th>
+            <td> {{task.taskTitle}} </td>
+            <td>{{task.taskDescription}}</td>
+            <td>Complete</td>
+            <td> <a href="{%url 'delete' task.id %}"><button type="submit" class="btn btn-danger">Delete</button></a>
+            </td>
+
+        </tr>
+
+        {%endif%}
+        <!--  -->
+        {%endfor%}
+    </tbody>
+
+</table>
+
+
+{%endblock%}
